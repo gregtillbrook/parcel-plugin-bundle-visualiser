@@ -14,7 +14,7 @@ Note: This is the first release of parcel-plugin-bundle-visualiser - it's just a
 ```console
 npm install --save-dev parcel-plugin-bundle-visualiser
 ```
-The next time you run your parcel build a bundle report will be saved 
+The next time you run your parcel build a bundle report will be saved to <project root>/report.html
 
 
 # Still TODO
