@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`./src/buildTreeData should generate tree data 1`] = `
+Object {
+  "groups": Array [
+    Object {
+      "label": "",
+      "weight": 0,
+    },
+    Object {
+      "groups": Array [
+        Object {
+          "groups": Array [
+            Object {
+              "groups": Array [
+                Object {
+                  "label": "asset1",
+                  "weight": 120,
+                },
+                Object {
+                  "label": "asset2",
+                  "weight": 100,
+                },
+              ],
+              "label": "folder1",
+              "weight": 220,
+            },
+          ],
+          "label": "module",
+          "weight": 220,
+        },
+      ],
+      "label": "mock bundle 1",
+      "weight": 400,
+    },
+    Object {
+      "groups": Array [
+        Object {
+          "groups": Array [
+            Object {
+              "groups": Array [
+                Object {
+                  "label": "asset2",
+                  "weight": 100,
+                },
+              ],
+              "label": "folder1",
+              "weight": 100,
+            },
+          ],
+          "label": "module",
+          "weight": 100,
+        },
+      ],
+      "label": "mock bundle 2",
+      "weight": 200,
+    },
+  ],
+}
+`;
+
+exports[`./src/buildTreeData should return an empty tree for an empty bundle 1`] = `
+Object {
+  "groups": Array [
+    Object {
+      "label": "",
+      "weight": 0,
+    },
+  ],
+}
+`;
