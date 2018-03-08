@@ -20,7 +20,7 @@ function saveReport(fileName, fileContent){
     if(err) { 
       return console.log(err); 
     }else{
-      console.log(`Bundlee breakdown saved in report: ${fileName}`); // eslint-disable-line no-console
+      console.log(`Bundle breakdown saved in report: ${fileName}`); // eslint-disable-line no-console
     }
   });
 }
