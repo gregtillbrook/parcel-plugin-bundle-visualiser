@@ -11,7 +11,9 @@ module.exports = function(mainBundle){
 };
 
 function* iterateBundles(bundle) {
-  yield bundle;
+  if( bundle.name && bundle.totalSize ){
+    yield bundle;
+  }
   for (let child of bundle.childBundles) {
     yield* iterateBundles(child);
   }

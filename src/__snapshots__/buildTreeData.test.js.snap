@@ -4,10 +4,6 @@ exports[`./src/buildTreeData should generate tree data 1`] = `
 Object {
   "groups": Array [
     Object {
-      "label": "",
-      "weight": 0,
-    },
-    Object {
       "groups": Array [
         Object {
           "groups": Array [
@@ -61,11 +57,6 @@ Object {
 
 exports[`./src/buildTreeData should return an empty tree for an empty bundle 1`] = `
 Object {
-  "groups": Array [
-    Object {
-      "label": "",
-      "weight": 0,
-    },
-  ],
+  "groups": Array [],
 }
 `;

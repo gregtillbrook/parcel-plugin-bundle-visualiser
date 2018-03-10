@@ -41,7 +41,7 @@ describe('./src/buildTreeData', ()=>{
               bundledSize:100
             }
           ])
-        },
+        }
       ])
     };
     const tree = buildTreeData(mockParcelBundle);
