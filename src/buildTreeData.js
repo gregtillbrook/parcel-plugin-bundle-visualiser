@@ -4,27 +4,10 @@ const path = require('path');
 
 
 module.exports = function(mainBundle){
-  const data = { groups:[]};
-  let bundles = Array.from(iterateBundles(mainBundle)).sort(
-    (a, b) => b.totalSize - a.totalSize
-  );
-
-  for (let bundle of bundles) {
-    const prettyName = formatFilename(bundle.name);
-
-    const node = {
-      label: formatFilename(prettyName),
-      weight: bundle.totalSize || 0
-    };
-
-    if(bundle.assets){
-      node.groups = parseAssets(bundle.assets);
-    }
-
-    data.groups.push(node);
-  }
-
-  return data;
+  return {
+    groups: Array.from(iterateBundles(mainBundle))
+      .map(bundle => parseChildBundle(bundle))
+  };
 };
 
 function* iterateBundles(bundle) {
@@ -34,8 +17,22 @@ function* iterateBundles(bundle) {
   }
 }
 
+function parseChildBundle(bundle){
+  const prettyName = formatFilename(bundle.name);
+  const node = {
+    label: formatFilename(prettyName),
+    weight: bundle.totalSize || 0
+  };
+
+  if(bundle.assets){
+    node.groups = parseAssets(bundle.assets);
+  }
+
+  return node;
+}
+
 function parseAssets(assets){
-  const assetMapTree = {};
+  const assetTree = [];
 
   for (let asset of assets) {
     const prettyName = formatFilename(asset.name);
@@ -44,36 +41,37 @@ function parseAssets(assets){
       weight: asset.bundledSize || 0
     };
 
-    insertAssetInTreeMapByFolder(assetData, assetMapTree);
+    insertAssetInTreeByFolder(assetData, assetTree);
   }
 
-  //TODO: refactor this crap - it's unnecessarily complicated
-  const assetArrayTree = convertMapTreeToArrayTree(assetMapTree);
-  assetArrayTree.forEach((asset)=>{
+  assetTree.forEach((asset)=>{
     sumWeightsDownTree(asset);
   });
-  return assetArrayTree;
+
+  return assetTree;
 }
 
-function insertAssetInTreeMapByFolder(asset, mapTree = {}){
+function insertAssetInTreeByFolder(asset, assetTree = []){
   const folders = asset.label.split(path.sep);
-  let currentNode = mapTree;
+  let currentGroup = assetTree;
 
   for(let i=0; i<folders.length; i++){
     const folder = folders[i];
     const isFile = i+1 >= folders.length;
 
-    if(isFile){
-      currentNode[folder] = {
-        label: folder,
-        weight: asset.weight,
-        isLeaf: true
+    let nextGroup = currentGroup.filter(child => child.label === folder)[0];
+    if(!nextGroup){
+      nextGroup = { 
+        label: folder
       };
-    }else if(!currentNode[folder]){
-      currentNode[folder] = {};
+      if(isFile){
+        nextGroup.weight = asset.weight;
+      }else{ 
+        nextGroup.groups = []; 
+      }
+      currentGroup.push(nextGroup);
     }
-
-    currentNode = currentNode[folder];
+    currentGroup = nextGroup.groups;
   }
 }
 
@@ -91,26 +89,6 @@ function sumWeightsDownTree(asset){
 
   asset.weight = totalWeight;
   return totalWeight;
-}
-
-function convertMapTreeToArrayTree(mapTree, arrayTree=[]){
-  for(let nodeName in mapTree){
-    let node = mapTree[nodeName];
-
-    if(node.isLeaf){
-      arrayTree.push({
-        label: nodeName,
-        weight: node.weight
-      });
-    }else{
-      arrayTree.push({
-        label: nodeName,
-        groups: convertMapTreeToArrayTree(node)
-      });
-    }
-  }
-
-  return arrayTree;
 }
 
 function formatFilename(filename = '') {
