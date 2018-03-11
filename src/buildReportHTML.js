@@ -114,7 +114,7 @@ module.exports = function(treeData){
         })());
 
         function formatTooltip(group){
-          var gzipSize = group.formattedGzipSize && (' (gzipped: ' + group.formattedGzipSize +  ')');
+          var gzipSize = group.formattedGzipSize ? (' (gzipped: ' + group.formattedGzipSize +  ')') : '';
           var t = '<em>' + group.label + '</em>';
           t += '<div>' + group.path + '</div>';
           t += '<div>Size:' + group.formattedSize + gzipSize + '</div>';
@@ -134,7 +134,7 @@ module.exports = function(treeData){
               e.pageY + 10 + 'px' : 
               document.body.clientHeight - 10 - tooltip.clientHeight + 'px';
         });
-        
+
       })();
       </script>
     </body>
