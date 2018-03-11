@@ -28,7 +28,7 @@ function parseChildBundle(bundle){
   const gzipSize = calcGzipSize(bundle.name);
   const node = {
     label: path.basename(filePath),
-    path: './' + filePath,
+    path: '.' + path.sep + filePath,
     weight: bundle.totalSize || 0,
     formattedSize: filesize(bundle.totalSize),
     formattedGzipSize: gzipSize && filesize(gzipSize),
@@ -87,7 +87,7 @@ function insertAssetInTreeByFolder(rawAsset, assetTree = []){
       nextGroup = { 
         label: folder
       };
-      nextGroup.path = './' + folders.slice(0, i+1).join(path.sep);
+      nextGroup.path = '.' + path.sep + folders.slice(0, i+1).join(path.sep);
 
       if(isFile){
         nextGroup.weight = rawAsset.size;
