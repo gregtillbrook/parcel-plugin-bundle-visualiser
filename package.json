@@ -15,11 +15,13 @@
     "lint": "node node_modules/eslint/bin/eslint.js src/index.js",
     "test:unit": "node ./node_modules/jest/bin/jest.js",
     "test:unit:watch": "node ./node_modules/jest/bin/jest.js --watch",
-    "jest:update":"./node_modules/jest/bin/jest.js -u",
-    "preview":"node ./preview/index.js"
+    "jest:update": "./node_modules/jest/bin/jest.js -u",
+    "preview": "node ./preview/index.js"
   },
   "devDependencies": {
     "eslint": "^4.18.2",
+    "filesize": "^3.6.0",
+    "gzip-size": "^4.1.0",
     "jest": "^22.4.2"
   },
   "keywords": [

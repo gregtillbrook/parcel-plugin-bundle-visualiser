@@ -1,6 +1,6 @@
 const buildReportHTML = require('./buildReportHTML');
 
-jest.mock('fs');
+jest.mock('fs'); //so that entire foamtree script isnt loaded
 
 
 describe('./src/buildReportHTML', ()=>{

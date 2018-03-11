@@ -4,51 +4,88 @@ exports[`./src/buildTreeData should generate tree data 1`] = `
 Object {
   "groups": Array [
     Object {
+      "formattedGzipSize": "119 B",
+      "formattedSize": "400 B",
+      "formattedTime": "200ms",
       "groups": Array [
         Object {
+          "formattedSize": "220 B",
+          "formattedTime": "50ms",
           "groups": Array [
             Object {
+              "formattedSize": "220 B",
+              "formattedTime": "50ms",
               "groups": Array [
                 Object {
+                  "formattedSize": "120 B",
+                  "formattedTime": "20ms",
+                  "isTooLarge": false,
                   "label": "asset1",
+                  "path": "./module/folder1/asset1",
+                  "time": 20,
                   "weight": 120,
                 },
                 Object {
+                  "formattedSize": "100 B",
+                  "formattedTime": "30ms",
+                  "isTooLarge": false,
                   "label": "asset2",
+                  "path": "./module/folder1/asset2",
+                  "time": 30,
                   "weight": 100,
                 },
               ],
               "label": "folder1",
+              "path": "./module/folder1",
               "weight": 220,
             },
           ],
           "label": "module",
+          "path": "./module",
           "weight": 220,
         },
       ],
+      "isTooLarge": false,
       "label": "mock bundle 1",
+      "path": "./dist/blah/mock bundle 1",
       "weight": 400,
     },
     Object {
+      "formattedGzipSize": "119 B",
+      "formattedSize": "200 B",
+      "formattedTime": "200ms",
       "groups": Array [
         Object {
+          "formattedSize": "100 B",
+          "formattedTime": "200ms",
           "groups": Array [
             Object {
+              "formattedSize": "100 B",
+              "formattedTime": "200ms",
               "groups": Array [
                 Object {
+                  "formattedSize": "100 B",
+                  "formattedTime": "200ms",
+                  "isTooLarge": false,
                   "label": "asset2",
+                  "path": "./module/folder1/asset2",
+                  "time": 200,
                   "weight": 100,
                 },
               ],
               "label": "folder1",
+              "path": "./module/folder1",
               "weight": 100,
             },
           ],
           "label": "module",
+          "path": "./module",
           "weight": 100,
         },
       ],
+      "isTooLarge": false,
       "label": "mock bundle 2",
+      "path": "./dist/blah/mock bundle 2",
       "weight": 200,
     },
   ],

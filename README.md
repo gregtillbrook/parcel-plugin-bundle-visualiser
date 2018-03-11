@@ -9,9 +9,7 @@ A plugin for the [Parcel bundler](https://parceljs.org/) to visualise bundle con
 
 ![Screenshot showing treemap of a bundle](/docs/bundle-report-example.png?raw=true)
 
-This plugin aims to make it easier to visualise a bundles contents and aid in troubleshooting and optimisation. If you know [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer/) then this plugin will be very familiar. Bundle contents is presented in a treemap that gives eash asset/folder an area relative to its size on disc.  
-
-Note: This is the first release of parcel-plugin-bundle-visualiser - it's just a basic MVP and there's plenty more I want to do but it should still be useful in its current form.
+This plugin aims to make it easier to visualise a bundles contents and aid in troubleshooting and optimisation. If you know [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer/) then this plugin will be very familiar. Bundle contents is presented in a treemap that gives eash asset/folder an area relative to its size on disc.
 
 
 # Install
@@ -22,15 +20,15 @@ npm install --save-dev parcel-plugin-bundle-visualiser
 The next time you run your parcel build a bundle report will be saved to `<project root>/report.html`
 
 
-# Still TODO
- - Show details for assets on mouse hover
- - Config to choose the name and output folder of the report
- - Command line arg for parcel so it's possible to generate report only when required
+# Release Notes
+ - 0.2 Initial POC 
+ - 0.8 Added onhover toolip showing stats (dont expect these reports to be viewed on touch devices - if thats incorrect then let me know). Also added gzip size estimate for bundles.
 
 
 # Credits
- - [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer/) - this plugin takes heavy inspiration from it and wouldnt exist without it
+ - [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer/) - This plugin takes heavy inspiration from it and wouldnt exist without it.
  - [Parcel](https://parceljs.org/) - A nice alternative bundler for when you dont need/want lots of configuration.
+
 
 [npm-image]: https://img.shields.io/npm/v/parcel-plugin-bundle-visualiser.svg
 [npm-url]: https://npmjs.org/package/parcel-plugin-bundle-visualiser
