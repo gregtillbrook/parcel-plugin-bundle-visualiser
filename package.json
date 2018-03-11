@@ -1,6 +1,6 @@
 {
   "name": "parcel-plugin-bundle-visualiser",
-  "version": "0.8.2",
+  "version": "1.0.0",
   "description": "A plugin for the parcel bundler to visualise bundle contents",
   "author": "Greg Tillbrook",
   "license": "MIT",
