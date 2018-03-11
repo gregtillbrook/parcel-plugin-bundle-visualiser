@@ -1,6 +1,6 @@
 {
   "name": "parcel-plugin-bundle-visualiser",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "description": "A plugin for the parcel bundler to visualise bundle contents",
   "author": "Greg Tillbrook",
   "license": "MIT",
@@ -18,10 +18,12 @@
     "jest:update": "./node_modules/jest/bin/jest.js -u",
     "preview": "node ./preview/index.js"
   },
+  "dependencies": {
+    "filesize": "^3.6.0",
+    "gzip-size": "^4.1.0"
+  },
   "devDependencies": {
     "eslint": "^4.18.2",
-    "filesize": "^3.6.0",
-    "gzip-size": "^4.1.0",
     "jest": "^22.4.2"
   },
   "keywords": [
