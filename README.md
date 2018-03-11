@@ -17,12 +17,28 @@ This plugin aims to make it easier to visualise a bundles contents and aid in tr
 ```bash
 npm install --save-dev parcel-plugin-bundle-visualiser
 ```
+
+Add the '--visualise' arg to your parcel build parcel command (the spelling '--visualize' also works). e.g.
+```bash
+parcel build src/index.html --visualise
+```
+
 The next time you run your parcel build a bundle report will be saved to `<project root>/report.html`
+
+
+# Interpreting results
+When you open the `<project root>/report.html` in a browser you'll see a treemap that shows the contents of each bundle that parcel created in the last build. The area an asset takes up on screen is relative to the size of the asset (after any minification but before gzipping). Hover over treemap to see further details;
+ - The current bundle/folder or asset file name
+ - The path relative to the project root
+ - The size of the asset (after any minification but before gzipping)
+ - Bundles will also have an estimated gzip size. This is meant as a indicator (actual compression size will depend on how your settings when serving the bundle)
+ - Time taken to bundle. Not sure this is very useful - parcel bundles in parallel so actual total times will be much lower than the simple sums shown here.
 
 
 # Release Notes
  - 0.2 Initial POC 
  - 0.8 Added onhover toolip showing stats (dont expect these reports to be viewed on touch devices - if thats incorrect then let me know). Also added gzip size estimate for bundles.
+ - 1.0 Required the passing of arg '--visualise' to parcel build command so that user can dictate when report is generated. Hence incremented major npm version as this is a breaking api change.
 
 
 # Credits

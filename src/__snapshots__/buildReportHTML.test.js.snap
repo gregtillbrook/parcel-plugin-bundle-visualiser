@@ -33,7 +33,7 @@ exports[`./src/buildReportHTML should generate a report 1`] = `
             position: absolute;
             z-index: 1000;
             max-width: 320px;
-            white-space: nowrap;
+            word-break: break-all;
             display: none;
             background: #ddd;
             opacity: 0.85;

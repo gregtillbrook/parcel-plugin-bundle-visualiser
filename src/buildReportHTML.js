@@ -39,7 +39,7 @@ module.exports = function(treeData){
             position: absolute;
             z-index: 1000;
             max-width: 320px;
-            white-space: nowrap;
+            word-break: break-all;
             display: none;
             background: #ddd;
             opacity: 0.85;
