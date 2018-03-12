@@ -3,9 +3,16 @@ jest.mock('fs', () => ({
   readFileSync: () => 'ahsdkajhskdhakdhajkfhjaksklsdjasjlkfhjaklsfjklasjfklasjfklasjfklajflkahsfuoi23uriouioruiru2223095720895723089509237509237057uworuwoifudosiufsoufposufosfsdfjd'
 }));
 
+//ensure consistency of test results on windows and linux/mac
 const mockFolderSeperator = '\\';
-const path = require('path');
-path.sep = mockFolderSeperator;
+jest.mock('path', () => {
+  const originalPath = require.requireActual('path');
+  return {
+    ...originalPath,
+    sep: mockFolderSeperator,
+    basename: (str)=> str.slice(str.lastIndexOf(mockFolderSeperator)+1),
+    dirname: (str)=> str.slice(0, str.lastIndexOf(mockFolderSeperator)),
+  }});
 
 const buildTreeData = require('./buildTreeData');
 
