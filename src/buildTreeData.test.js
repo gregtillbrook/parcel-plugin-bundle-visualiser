@@ -8,11 +8,12 @@ const mockFolderSeperator = '\\';
 jest.mock('path', () => {
   const originalPath = require.requireActual('path');
   return {
-    ...originalPath,
     sep: mockFolderSeperator,
     basename: (str)=> str.slice(str.lastIndexOf(mockFolderSeperator)+1),
     dirname: (str)=> str.slice(0, str.lastIndexOf(mockFolderSeperator)),
-  }});
+    relative: originalPath.relative
+  };
+});
 
 const buildTreeData = require('./buildTreeData');
 
