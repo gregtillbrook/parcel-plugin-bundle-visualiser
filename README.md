@@ -18,7 +18,9 @@ This plugin aims to make it easier to visualise a bundles contents and aid in tr
 npm install --save-dev parcel-plugin-bundle-visualiser
 ```
 
-Add the '--visualise' arg to your parcel build parcel command (the spelling '--visualize' also works). e.g.
+# Usage
+
+Add the `--visualise` arg to your parcel build command. e.g.
 ```bash
 parcel build src/index.html --visualise
 ```
@@ -31,15 +33,15 @@ When you open the `<project root>/report.html` in a browser you'll see a treemap
  - The current bundle/folder or asset file name
  - The path relative to the project root
  - The size of the asset (after any minification but before gzipping)
- - Bundles will also have an estimated gzip size. This is meant as a indicator (actual compression size will depend on how your settings when serving the bundle)
+ - Bundles will also have an estimated gzip size. This is meant as a indicator (actual compression size will depend on your settings when serving the bundle)
  - Time taken to bundle. Not sure this is very useful - parcel bundles in parallel so actual total times will be much lower than the simple sums shown here.
 
 
 # Release Notes
  - 0.2 Initial POC 
- - 0.8 Added onhover toolip showing stats (dont expect these reports to be viewed on touch devices - if thats incorrect then let me know). Also added gzip size estimate for bundles.
+ - 0.8 Added onhover toolip showing stats (I dont expect these reports to be viewed on touch devices - if thats incorrect then let me know). Also added gzip size estimate for bundles.
  - 1.0 Required the passing of arg '--visualise' to parcel build command so that user can dictate when report is generated. Hence incremented major npm version as this is a breaking api change.
-
+ - 1.0.1 Minor readme tweaks
 
 # Credits
  - [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer/) - This plugin takes heavy inspiration from it and wouldnt exist without it.
