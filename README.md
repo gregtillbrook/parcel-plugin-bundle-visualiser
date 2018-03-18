@@ -20,11 +20,6 @@ npm install --save-dev parcel-plugin-bundle-visualiser
 
 # Usage
 
-Add the `--visualise` arg to your parcel build command. e.g.
-```bash
-parcel build src/index.html --visualise
-```
-
 The next time you run your parcel build a bundle report will be saved to `<project root>/report.html`
 
 
@@ -37,11 +32,13 @@ When you open the `<project root>/report.html` in a browser you'll see a treemap
  - Time taken to bundle. Not sure this is very useful - parcel bundles in parallel so actual total times will be much lower than the simple sums shown here.
 
 
+
 # Release Notes
- - 0.2 Initial POC 
- - 0.8 Added onhover toolip showing stats (I dont expect these reports to be viewed on touch devices - if thats incorrect then let me know). Also added gzip size estimate for bundles.
- - 1.0 Required the passing of arg '--visualise' to parcel build command so that user can dictate when report is generated. Hence incremented major npm version as this is a breaking api change.
+ - 1.0.2 Removed '--visualise' cli arg until until bug #6 i resolved
  - 1.0.1 Minor readme tweaks
+ - 1.0 Required the passing of arg '--visualise' to parcel build command so that user can dictate when report is generated. Hence incremented major npm version as this is a breaking api change.
+ - 0.8 Added onhover toolip showing stats (I dont expect these reports to be viewed on touch devices - if thats incorrect then let me know). Also added gzip size estimate for bundles.
+ - 0.2 Initial POC 
 
 # Credits
  - [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer/) - This plugin takes heavy inspiration from it and wouldnt exist without it.

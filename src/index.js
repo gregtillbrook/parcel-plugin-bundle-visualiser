@@ -6,8 +6,10 @@ const buildReportHTML = require('./buildReportHTML');
 
 
 module.exports = function (bundler) {
-  const argv = require('yargs').argv;
-  const isBundleReportEnabled = argv.visualise || argv.visualize;
+  // Temporarily skipping arg check until Ive resolved https://github.com/gregtillbrook/parcel-plugin-bundle-visualiser/issues/6
+  // const argv = require('yargs').argv;
+  // const isBundleReportEnabled = argv.visualise || argv.visualize;
+  const isBundleReportEnabled = true;
 
   if(isBundleReportEnabled){
     bundler.on('bundled', mainBundle=>{

@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * Carrot Search FoamTree HTML5 (demo variant)
  * v3.4.5, 4fa198d722d767b68d0409e88290ea6de98d1eaa/4fa198d7, build FOAMTREE-SOFTWARE4-DIST-39, Jul 26, 2017

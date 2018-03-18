@@ -12,7 +12,7 @@
   "scripts": {
     "start": "npm test",
     "test": "npm run lint && npm run test:unit",
-    "lint": "node node_modules/eslint/bin/eslint.js src/index.js",
+    "lint": "node node_modules/eslint/bin/eslint.js src/*.js",
     "test:unit": "node ./node_modules/jest/bin/jest.js",
     "test:unit:watch": "node ./node_modules/jest/bin/jest.js --watch",
     "jest:update": "./node_modules/jest/bin/jest.js -u",
