@@ -60,7 +60,7 @@ function parseAssets(assets){
     const filePath = formatProjectPath(asset.name);
     const rawAssetData = {
       filePath: filePath,
-      size: asset.bundledSize || 0,
+      size: asset.bundledSize || 0.1, //asset size of zero cause incorrect layout in tree so tweak
       time: asset.buildTime
     };
 

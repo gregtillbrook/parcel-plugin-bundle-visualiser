@@ -102,6 +102,11 @@ module.exports = function(treeData){
               this.zoom(toZoom);
             }
 
+            //we dont need the title bar as we have the tooltip
+            titleBarDecorator: function (opts, params, vars) {
+              vars.titleBarShown = false;
+            }
+
           });
         });
   
