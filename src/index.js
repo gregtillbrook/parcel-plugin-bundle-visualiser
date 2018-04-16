@@ -6,7 +6,7 @@ const buildReportHTML = require('./buildReportHTML');
 
 
 module.exports = function (bundler) {
-  const isBundleReportEnabled = process.env.NODE_ENV === "production";
+  const isBundleReportEnabled = process.env.NODE_ENV === 'production';
 
   if(isBundleReportEnabled){
     bundler.on('bundled', mainBundle=>{
