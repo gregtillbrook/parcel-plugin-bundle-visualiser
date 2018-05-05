@@ -20,7 +20,7 @@ npm install --save-dev parcel-plugin-bundle-visualiser
 
 # Usage
 
-The next time you run your parcel build a bundle report will be saved to `<project root>/report.html`
+The next time you run your parcel build in production mode (i.e. when NODE_ENV is 'production') a bundle report will be saved to `<project root>/report.html`
 
 
 # Interpreting results
@@ -34,6 +34,7 @@ When you open the `<project root>/report.html` in a browser you'll see a treemap
 
 
 # Release Notes
+ - 1.1.0 Report will now only be generated when NODE_ENV=production
  - 1.0.2 Removed '--visualise' cli arg until until bug #6 i resolved
  - 1.0.1 Minor readme tweaks
  - 1.0 Required the passing of arg '--visualise' to parcel build command so that user can dictate when report is generated. Hence incremented major npm version as this is a breaking api change.
