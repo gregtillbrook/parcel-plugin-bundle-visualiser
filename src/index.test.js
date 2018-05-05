@@ -14,6 +14,7 @@ fs.writeFile = jest.fn();
 const EventEmitter = require('events');
 const plugin = require('./index');
 
+process.env.NODE_ENV = 'production'; // mock env to production, to allow report to be built
 
 describe('./src/index', ()=>{
 
