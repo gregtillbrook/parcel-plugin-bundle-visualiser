@@ -1,7 +1,10 @@
 const buildReportHTML = require('./buildReportHTML');
 
-jest.mock('fs'); //so that entire foamtree script isnt loaded
-
+//mocking so that entire foamtree script isnt loaded
+//note: unit test will stil fail if loadTextFile is passed a invalid file
+jest.mock('fs', () => ({
+  readFileSync: () => 'mock inlined contents'
+}));
 
 describe('./src/buildReportHTML', ()=>{
 

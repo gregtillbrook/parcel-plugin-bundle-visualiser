@@ -16,7 +16,7 @@
     "test:unit": "node ./node_modules/jest/bin/jest.js",
     "test:unit:watch": "node ./node_modules/jest/bin/jest.js --watch",
     "jest:update": "./node_modules/jest/bin/jest.js -u",
-    "preview": "node ./preview/index.js --visualise"
+    "preview": "NODE_ENV=production node ./preview/index.js --visualise"
   },
   "dependencies": {
     "filesize": "^3.6.0",
