@@ -29,17 +29,27 @@ When you open the `<project root>/report.html` in a browser you'll see a treemap
  - The path relative to the project root
  - The size of the asset (after any minification but before gzipping)
  - Bundles will also have an estimated gzip size. This is meant as a indicator (actual compression size will depend on your settings when serving the bundle)
- - Time taken to bundle. Not sure this is very useful - parcel bundles in parallel so actual total times will be much lower than the simple sums shown here.
-
+ - Time taken to bundle. Not sure this is very useful but leaving it in for now - parcel bundles in parallel so actual total times will be much lower than the simple sums shown here.
 
 
 # Release Notes
- - 1.1.0 Report will now only be generated when NODE_ENV=production
- - 1.0.2 Removed '--visualise' cli arg until until bug #6 i resolved
+ - 1.1.2 Fixed script error in 
+ - 1.1.1 Report will now only be generated when NODE_ENV=production
+ - 1.0.2 Removed '--visualise' cli arg until until bug [#6](https://github.com/gregtillbrook/parcel-plugin-bundle-visualiser/issues/6) is resolved
  - 1.0.1 Minor readme tweaks
  - 1.0 Required the passing of arg '--visualise' to parcel build command so that user can dictate when report is generated. Hence incremented major npm version as this is a breaking api change.
  - 0.8 Added onhover toolip showing stats (I dont expect these reports to be viewed on touch devices - if thats incorrect then let me know). Also added gzip size estimate for bundles.
  - 0.2 Initial POC 
+
+
+# Contributing
+Contribution is welcome to this project. If you have feedback or suggestion then you can add an issue (please do check for duplicates first). If you have a bug fix or minor improvement then see the steps below and have at it. If you intend a more meaty change it's best to raise an issue first to discuss whats planned.
+ - Create a fork from this repo in the usual way
+ - Make your intended changes and verify they're good 
+ - Add unit tests for any new functionality
+ - Run `npm test` to ensure code lints and units tests pass (you'll need to run `npm install` before hand, the first time round)
+ - Raise a pull request back to this repo
+
 
 # Credits
  - [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer/) - This plugin takes heavy inspiration from it and wouldnt exist without it.
