@@ -100,7 +100,7 @@ module.exports = function(treeData){
                 toZoom = this.get("dataObject");
               }
               this.zoom(toZoom);
-            }
+            },
 
             //we dont need the title bar as we have the tooltip
             titleBarDecorator: function (opts, params, vars) {
