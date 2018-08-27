@@ -53,12 +53,16 @@ describe('./src/index', ()=>{
 
     expect(fs.writeFile).toHaveBeenCalledTimes(1);
     const args = fs.writeFile.mock.calls[0];
-    expect(args[0]).toEqual('report.html');
+    expect(args[0]).toEqual('outdir\\report.html');
     expect(args[1]).toEqual('mock report content');
   });
 
   function simulateParcelBundling(){
     const mockBundler = new EventEmitter();
+    mockBundler.options = {
+      outDir: 'outdir'
+    };
+
     plugin(mockBundler);
 
     const mockBundle = {name:'fred'};
