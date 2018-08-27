@@ -8,6 +8,9 @@ jest.unmock('fs');
 const fs = require('fs');
 fs.writeFile = jest.fn();
 
+jest.mock('path');
+
+
 // jest.mock('yargs');
 // const yargs = require('yargs');
 

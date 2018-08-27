@@ -18,6 +18,9 @@
     "jest:update": "./node_modules/jest/bin/jest.js -u",
     "preview": "NODE_ENV=production node ./preview/index.js --visualise"
   },
+  "jest": {
+    "testURL": "http://localhost"
+  },
   "dependencies": {
     "filesize": "^3.6.0",
     "gzip-size": "^4.1.0",

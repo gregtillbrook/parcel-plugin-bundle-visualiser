@@ -3,17 +3,7 @@ jest.mock('fs', () => ({
   readFileSync: () => 'ahsdkajhskdhakdhajkfhjaksklsdjasjlkfhjaklsfjklasjfklasjfklasjfklajflkahsfuoi23uriouioruiru2223095720895723089509237509237057uworuwoifudosiufsoufposufosfsdfjd'
 }));
 
-//ensure consistency of test results on windows and linux/mac
-const mockFolderSeperator = '\\';
-jest.mock('path', () => {
-  const originalPath = require.requireActual('path');
-  return {
-    sep: mockFolderSeperator,
-    basename: (str)=> str.slice(str.lastIndexOf(mockFolderSeperator)+1),
-    dirname: (str)=> str.slice(0, str.lastIndexOf(mockFolderSeperator)),
-    relative: originalPath.relative
-  };
-});
+jest.mock('path');
 
 const buildTreeData = require('./buildTreeData');
 
@@ -69,6 +59,7 @@ describe('./src/buildTreeData', ()=>{
   });
 
   function sep(path){
+    const mockFolderSeperator = '\\';    
     //make folder seperators consistent so we can use same test in windows and linux/mac
     return path.replace(new RegExp('/', 'g'), mockFolderSeperator);
   }
