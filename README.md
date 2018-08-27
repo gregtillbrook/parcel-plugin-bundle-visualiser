@@ -20,11 +20,11 @@ npm install --save-dev parcel-plugin-bundle-visualiser
 
 # Usage
 
-The next time you run your parcel build in production mode (i.e. when NODE_ENV is 'production') a bundle report will be saved to `<project root>/report.html`
+The next time you run your parcel build in production mode (i.e. when NODE_ENV is 'production') a bundle report will be saved to `<output directory>/report.html`
 
 
 # Interpreting results
-When you open the `<project root>/report.html` in a browser you'll see a treemap that shows the contents of each bundle that parcel created in the last build. The area an asset takes up on screen is relative to the size of the asset (after any minification but before gzipping). Hover over treemap to see further details;
+When you open the `<output directory>/report.html` in a browser you'll see a treemap that shows the contents of each bundle that parcel created in the last build. The area an asset takes up on screen is relative to the size of the asset (after any minification but before gzipping). Hover over treemap to see further details;
  - The current bundle/folder or asset file name
  - The path relative to the project root
  - The size of the asset (after any minification but before gzipping)
@@ -33,6 +33,7 @@ When you open the `<project root>/report.html` in a browser you'll see a treemap
 
 
 # Release Notes
+ - 1.2.0 Save report to Parcel output directory
  - 1.1.2 Fixed script error in 
  - 1.1.1 Report will now only be generated when NODE_ENV=production
  - 1.0.2 Removed '--visualise' cli arg until until bug [#6](https://github.com/gregtillbrook/parcel-plugin-bundle-visualiser/issues/6) is resolved
