@@ -16,7 +16,8 @@
     "test:unit": "node ./node_modules/jest/bin/jest.js",
     "test:unit:watch": "node ./node_modules/jest/bin/jest.js --watch",
     "jest:update": "./node_modules/jest/bin/jest.js -u",
-    "preview": "NODE_ENV=production node ./preview/index.js --visualise"
+    "preview": "NODE_ENV=production node ./preview/index.js --visualise",
+    "format":"npx prettier --single-quote --trailing-comma es5 --write 'src/**/*.js'"
   },
   "jest": {
     "testURL": "http://localhost"
@@ -28,7 +29,8 @@
   },
   "devDependencies": {
     "eslint": "^4.18.2",
-    "jest": "^22.4.2"
+    "jest": "^22.4.2",
+    "prettier": "^1.14.2"
   },
   "keywords": [
     "parcel",

@@ -1,8 +1,9 @@
 /* eslint-disable */
+// prettier-ignore
 /**
  * Carrot Search FoamTree HTML5 (demo variant)
  * v3.4.5, 4fa198d722d767b68d0409e88290ea6de98d1eaa/4fa198d7, build FOAMTREE-SOFTWARE4-DIST-39, Jul 26, 2017
- * 
+ *
  * Carrot Search confidential.
  * Copyright 2002-2017, Carrot Search s.c, All Rights Reserved.
  */
@@ -254,4 +255,3 @@ attributionTheme:"light",interactionHandler:v.ii()?"hammerjs":"builtin",onModelC
 onGroupDragStart:[],onGroupDrag:[],onGroupDragEnd:[],onGroupTransformStart:[],onGroupTransform:[],onGroupTransformEnd:[],onKeyUp:[],selection:null,open:null,exposure:null,imageData:null,hierarchy:null,geometry:null,containerCoordinates:null,state:null,viewport:null,times:null});window.CarrotSearchFoamTree.geometry=Object.freeze(function(){return{rectangleInPolygon:function(a,l,k,f,d,c,g){d=D.B(d,1);c=D.B(c,0.5);g=D.B(g,0.5);a=M.se(a,{x:l,y:k},f,c,g)*d;return{x:l-a*f*c,y:k-a*g,w:a*f,h:a}},circleInPolygon:function(a,
 l,k){return M.Eg(a,{x:l,y:k})},stabPolygon:function(a,l,k,f){return M.Wb(a,{x:l,y:k},f)},polygonCentroid:function(a){a=M.k(a,{});return{x:a.x,y:a.y,area:a.ja}},boundingBox:function(a){for(var l=a[0].x,k=a[0].y,f=a[0].x,d=a[0].y,c=1;c<a.length;c++){var g=a[c];g.x<l&&(l=g.x);g.y<k&&(k=g.y);g.x>f&&(f=g.x);g.y>d&&(d=g.y)}return{x:l,y:k,w:f-l,h:d-k}}}}())},function(){window.CarrotSearchFoamTree=function(){window.console.error("FoamTree is not supported on this browser.")};window.CarrotSearchFoamTree.Xj=
 !1});})();
-

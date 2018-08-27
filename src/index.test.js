@@ -10,7 +10,6 @@ fs.writeFile = jest.fn();
 
 jest.mock('path');
 
-
 // jest.mock('yargs');
 // const yargs = require('yargs');
 
@@ -19,9 +18,8 @@ const plugin = require('./index');
 
 process.env.NODE_ENV = 'production'; // mock env to production, to allow report to be built
 
-describe('./src/index', ()=>{
-
-  beforeEach(()=>{
+describe('./src/index', () => {
+  beforeEach(() => {
     fs.writeFile.mockClear();
   });
 
@@ -51,7 +49,7 @@ describe('./src/index', ()=>{
     expect(fs.writeFile).toHaveBeenCalledTimes(1);
   });
   */
-  it('should generate report', ()=>{
+  it('should generate report', () => {
     simulateParcelBundling();
 
     expect(fs.writeFile).toHaveBeenCalledTimes(1);
@@ -60,16 +58,15 @@ describe('./src/index', ()=>{
     expect(args[1]).toEqual('mock report content');
   });
 
-  function simulateParcelBundling(){
+  function simulateParcelBundling() {
     const mockBundler = new EventEmitter();
     mockBundler.options = {
-      outDir: 'outdir'
+      outDir: 'outdir',
     };
 
     plugin(mockBundler);
 
-    const mockBundle = {name:'fred'};
+    const mockBundle = { name: 'fred' };
     mockBundler.emit('bundled', mockBundle);
   }
-
 });

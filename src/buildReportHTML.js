@@ -1,10 +1,11 @@
 //merges tree data into page template + inlines scripts
 const fs = require('fs');
 
-
-module.exports = function(treeData){
+module.exports = function(treeData) {
   const styles = loadTextFile('./buildReportAssets/styles.css');
-  const foamTreeScript = loadTextFile('./buildReportAssets/carrotsearch.foamtree.js');
+  const foamTreeScript = loadTextFile(
+    './buildReportAssets/carrotsearch.foamtree.js'
+  );
   const initScript = loadTextFile('./buildReportAssets/init.js');
   const treeDataString = JSON.stringify(treeData);
 
@@ -35,7 +36,7 @@ module.exports = function(treeData){
   `;
 };
 
-function loadTextFile(filePath){
+function loadTextFile(filePath) {
   const filename = require.resolve(filePath);
   return fs.readFileSync(filename, 'utf8');
 }
