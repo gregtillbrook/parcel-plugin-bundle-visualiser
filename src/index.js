@@ -1,5 +1,6 @@
 'use strict';
 const fs = require('fs');
+const path = require('path');
 
 const buildTreeData = require('./buildTreeData');
 const buildReportHTML = require('./buildReportHTML');
@@ -7,12 +8,13 @@ const buildReportHTML = require('./buildReportHTML');
 
 module.exports = function (bundler) {
   const isBundleReportEnabled = process.env.NODE_ENV === 'production';
+  const filename = path.join(bundler.options.outDir, 'report.html');
 
   if(isBundleReportEnabled){
     bundler.on('bundled', mainBundle=>{
       const treeData = buildTreeData(mainBundle);
       const report = buildReportHTML(treeData);
-      saveReport('report.html', report);
+      saveReport(filename, report);
     });
   }
 
