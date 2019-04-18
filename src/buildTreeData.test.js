@@ -57,6 +57,29 @@ describe('./src/buildTreeData', () => {
     expect(tree).toMatchSnapshot();
   });
 
+  it('should ignore source maps', () => {
+    const mockParcelBundle = {
+      childBundles: new Set([
+        {
+          name: sep('dist/blah/mock.js'),
+          totalSize: 400,
+          bundleTime: 200,
+          childBundles: new Set(),
+          assets: new Set()
+        },
+        {
+          name: sep('dist/blah/mock.js.map'),
+          totalSize: 200,
+          bundleTime: 200,
+          childBundles: new Set(),
+          assets: new Set(),
+        },
+      ]),
+    };
+    const tree = buildTreeData(mockParcelBundle);
+    expect(tree).toMatchSnapshot();
+  });
+
   function sep(path) {
     const mockFolderSeperator = '\\';
     //make folder seperators consistent so we can use same test in windows and linux/mac

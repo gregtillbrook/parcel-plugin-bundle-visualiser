@@ -92,6 +92,23 @@ Object {
 }
 `;
 
+exports[`./src/buildTreeData should ignore source maps 1`] = `
+Object {
+  "groups": Array [
+    Object {
+      "formattedGzipSize": "119 B",
+      "formattedSize": "400 B",
+      "formattedTime": "200ms",
+      "groups": Array [],
+      "isTooLarge": false,
+      "label": "mock.js",
+      "path": ".\\\\dist\\\\blah\\\\mock.js",
+      "weight": 400,
+    },
+  ],
+}
+`;
+
 exports[`./src/buildTreeData should return an empty tree for an empty bundle 1`] = `
 Object {
   "groups": Array [],
