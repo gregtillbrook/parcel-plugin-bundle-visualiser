@@ -20,6 +20,7 @@ function* iterateBundles(bundle) {
     yield bundle;
   }
   for (let child of bundle.childBundles) {
+    if (child.name.endsWith('.map')) continue;
     yield* iterateBundles(child);
   }
 }
