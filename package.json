@@ -25,6 +25,8 @@
   "dependencies": {
     "filesize": "^3.6.0",
     "gzip-size": "^4.1.0",
+    "minimatch": "^3.0.4",
+    "rc": "^1.2.8",
     "yargs": "^11.0.0"
   },
   "devDependencies": {
