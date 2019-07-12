@@ -10,9 +10,6 @@ fs.writeFile = jest.fn();
 
 jest.mock('path');
 
-// jest.mock('yargs');
-// const yargs = require('yargs');
-
 const EventEmitter = require('events');
 const plugin = require('./index');
 
@@ -23,32 +20,6 @@ describe('./src/index', () => {
     fs.writeFile.mockClear();
   });
 
-  // Temporarily skipping arg check until Ive resolved https://github.com/gregtillbrook/parcel-plugin-bundle-visualiser/issues/6
-  /*
-  it('should not generate flag when "--visualise" arg is not supplied', ()=>{
-    yargs.argv = {};
-    simulateParcelBundling();
-
-    expect(fs.writeFile).not.toHaveBeenCalled();
-  });
-
-  it('should generate report when "--visualise" arg is supplied', ()=>{
-    yargs.argv = {visualise:true};
-    simulateParcelBundling();
-
-    expect(fs.writeFile).toHaveBeenCalledTimes(1);
-    const args = fs.writeFile.mock.calls[0];
-    expect(args[0]).toEqual('report.html');
-    expect(args[1]).toEqual('mock report content');
-  });
-
-  it('should also accept alt spelling for arg "--visualize"', ()=>{
-    yargs.argv = {visualize:true};
-    simulateParcelBundling();
-
-    expect(fs.writeFile).toHaveBeenCalledTimes(1);
-  });
-  */
   it('should generate report', () => {
     simulateParcelBundling();
 

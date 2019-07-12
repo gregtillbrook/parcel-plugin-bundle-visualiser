@@ -24,8 +24,7 @@
   },
   "dependencies": {
     "filesize": "^3.6.0",
-    "gzip-size": "^4.1.0",
-    "yargs": "^11.0.0"
+    "gzip-size": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
