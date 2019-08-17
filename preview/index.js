@@ -4,7 +4,7 @@ const parcelPluginBundleVisualiser = require('../src/index');
 
 const mockBundle = {
   childBundles: new Set([
-    {  
+    {
       name:'preview/pretend-bundles/index.js',
       totalSize:400,
       bundleTime:200,
@@ -22,7 +22,7 @@ const mockBundle = {
         }
       ])
     },
-    {  
+    {
       name:'preview/pretend-bundles/index.css',
       totalSize:300,
       bundleTime:200,
@@ -39,6 +39,11 @@ const mockBundle = {
 };
 
 const mockParcelBundler  = new EventEmitter();
+
+mockParcelBundler.options = {
+  outDir: './preview',
+};
+
 parcelPluginBundleVisualiser(mockParcelBundler);
 
 mockParcelBundler.emit('bundled', mockBundle);
