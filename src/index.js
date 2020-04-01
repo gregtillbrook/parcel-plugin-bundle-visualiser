@@ -6,7 +6,7 @@ const buildTreeData = require('./buildTreeData');
 const buildReportHTML = require('./buildReportHTML');
 
 module.exports = function(bundler) {
-  const isBundleReportEnabled = process.env.NODE_ENV === 'production';
+  const isBundleReportEnabled = process.env.NODE_ENV === 'production' && bundler.options.detailedReport;
 
   if (isBundleReportEnabled) {
     bundler.on('bundled', mainBundle => {
