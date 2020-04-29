@@ -1,10 +1,10 @@
 {
-  "name": "parcel-plugin-bundle-visualiser",
+  "name": "@studysync/parcel-plugin-bundle-visualiser",
   "version": "1.2.0",
   "description": "A plugin for the parcel bundler to visualise bundle contents",
   "author": "Greg Tillbrook",
-  "license": "MIT",
-  "repository": "gregtillbrook/parcel-plugin-bundle-visualiser",
+  "license": "UNLICENSED",
+  "repository": "https://github.com/dkadrios/parcel-plugin-bundle-visualiser.git",
   "engines": {
     "node": ">=6"
   },
@@ -25,6 +25,8 @@
   "dependencies": {
     "filesize": "^3.6.0",
     "gzip-size": "^4.1.0",
+    "minimatch": "^3.0.4",
+    "rc": "^1.2.8",
     "yargs": "^11.0.0"
   },
   "devDependencies": {

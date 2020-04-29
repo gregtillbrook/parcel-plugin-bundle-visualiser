@@ -3,15 +3,22 @@ const path = require('path');
 const filesize = require('filesize');
 const gzipSize = require('gzip-size');
 const fs = require('fs');
+const minimatch = require('minimatch');
+
+const conf = require('rc')('bundlevisualizer', {
+  exclude: [],
+});
 
 // const WARNING = '⚠️';
 const LARGE_BUNDLE_SIZE = 1024 * 1024;
 
+const excludeBundle = ({ name }) => !conf.exclude.some(pattern => minimatch(name, pattern));
+
 module.exports = function(mainBundle) {
   return {
-    groups: Array.from(iterateBundles(mainBundle)).map(bundle =>
-      parseChildBundle(bundle)
-    ),
+    groups: Array.from(iterateBundles(mainBundle))
+      .filter(excludeBundle)
+      .map(parseChildBundle),
   };
 };
 
